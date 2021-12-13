@@ -35,13 +35,17 @@ describe 'User Stories' do
 
     # As an air traffic controller 
     # To ensure safety 
-    # I want to prevent takeoff when weather is stormy 
+    # I want to prevent landing when weather is stormy
     context 'when weather is stormy do' do
         before do
             allow(airport).to receive(:stormy?).and_return true # should have a method #stormy and it should return true
         end
         it 'does not allow planes to land' do
             expect { airport.land(plane) }.to raise_error 'Cannot land plane: weather is stormy.'
+        end
+
+        it  'does not allow planes to take off' do
+            expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: weather is stormy.' 
         end
     end
 end
