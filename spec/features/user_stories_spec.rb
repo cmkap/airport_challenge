@@ -44,6 +44,9 @@ describe 'User Stories' do
             expect { airport.land(plane) }.to raise_error 'Cannot land plane: weather is stormy.'
         end
 
+        # As an air traffic controller 
+        # To ensure safety 
+        # I want to prevent takeoff when weather is stormy 
         it  'does not allow planes to take off' do
             expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: weather is stormy.' 
         end
