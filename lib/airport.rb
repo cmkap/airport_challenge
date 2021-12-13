@@ -15,10 +15,7 @@ class Airport
     def take_off(plane)
     end
 
-    private
-
-    # def stormy?
-    # end
+    private 
 
     def full?
         @planes.length >= @capacity
